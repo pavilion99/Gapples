@@ -36,7 +36,6 @@
     </dependencies>
     
     <build>
-    	<build>
         <directory>target/${build.number}</directory>
         <finalName>${project.artifactId}-${project.version}-${build.number}</finalName>
     </build>
