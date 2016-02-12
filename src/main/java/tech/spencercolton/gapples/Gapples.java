@@ -8,6 +8,7 @@ import org.bukkit.inventory.ShapelessRecipe;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.potion.Potion;
 import org.bukkit.potion.PotionType;
+import tech.spencercolton.gapples.Listeners.CraftGappleListener;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -23,6 +24,7 @@ public class Gapples extends JavaPlugin {
     @Override
     public void onEnable() {
         addRecipes();
+        registerListeners();
     }
 
     @Override
@@ -45,6 +47,10 @@ public class Gapples extends JavaPlugin {
         }
 
         recipes.stream().forEach(Bukkit::addRecipe);
+    }
+
+    private void registerListeners() {
+        Bukkit.getPluginManager().registerEvents(new CraftGappleListener(), this);
     }
 
 }
