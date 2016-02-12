@@ -21,10 +21,16 @@ public class Gapples extends JavaPlugin {
     public static boolean craftingAllowed = true;
     public static List<Recipe> recipes = new ArrayList<>();
 
+    public static boolean debug;
+
     @Override
     public void onEnable() {
         addRecipes();
         registerListeners();
+
+        saveDefaultConfig();
+
+        debug = this.getConfig().getBoolean("debug");
     }
 
     @Override
