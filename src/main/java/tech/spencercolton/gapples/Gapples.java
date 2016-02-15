@@ -25,12 +25,12 @@ public class Gapples extends JavaPlugin {
 
     @Override
     public void onEnable() {
-        addRecipes();
-        registerListeners();
-
         saveDefaultConfig();
 
         debug = this.getConfig().getBoolean("debug");
+        
+        addRecipes();
+        registerListeners();
     }
 
     @Override
