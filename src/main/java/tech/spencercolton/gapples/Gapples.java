@@ -50,6 +50,11 @@ public class Gapples extends JavaPlugin {
             sr.addIngredient(1, i.getData());
 
             recipes.add(sr);
+
+            if(debug) {
+                Bukkit.getLogger().info("Added recipe for " + pt.toString() + " gapple.");
+                Bukkit.getLogger().info("Items: " + potion.getType().toString() + " and " + i.getType().toString());
+            }
         }
 
         recipes.stream().forEach(Bukkit::addRecipe);
