@@ -89,9 +89,9 @@ public class Gapples extends JavaPlugin {
 
             ShapelessRecipe sr = new ShapelessRecipe(new ItemStack(Material.STICK));
 
-            sr.addIngredient(1, it.getData());
+            sr.addIngredient(it.getData());
 
-            sr.addIngredient(1, i.getData());
+            sr.addIngredient(i.getData());
 
             recipes.add(sr);
 
