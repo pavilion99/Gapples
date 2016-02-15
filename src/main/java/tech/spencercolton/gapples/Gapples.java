@@ -28,7 +28,7 @@ public class Gapples extends JavaPlugin {
         saveDefaultConfig();
 
         debug = this.getConfig().getBoolean("debug");
-        
+
         addRecipes();
         registerListeners();
     }
@@ -44,16 +44,17 @@ public class Gapples extends JavaPlugin {
         for(PotionType pt : PotionType.values()) {
             ItemStack potion = new Potion(pt).toItemStack(1);
 
-            ShapelessRecipe sr = new ShapelessRecipe(i);
-            sr.addIngredient(1, potion.getData());
+            ShapelessRecipe sr = new ShapelessRecipe(new ItemStack(Material.BEDROCK));
 
-            sr.addIngredient(1, i.getData());
+            sr.addIngredient(potion.getData());
+
+            sr.addIngredient(i.getData());
 
             recipes.add(sr);
 
             if(debug) {
                 Bukkit.getLogger().info("Added recipe for " + pt.toString() + " gapple.");
-                Bukkit.getLogger().info("Items: " + potion.getType().toString() + " and " + i.getType().toString());
+                Bukkit.getLogger().info("Items: " + potion.getType().toString() + ":" + potion.getDurability() + " and " + i.getType().toString() + ":" + i.getDurability());
             }
         }
 
