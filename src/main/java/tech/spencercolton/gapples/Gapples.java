@@ -84,10 +84,10 @@ public class Gapples extends JavaPlugin {
             potions.add(new ItemStack(Material.POTION, 1, (short)i));
         }
 
-        ItemStack i = new ItemStack(Material.GOLDEN_APPLE, 1, (short)1);
-
         for(ItemStack it : potions) {
-            ShapelessRecipe sr = new ShapelessRecipe(i);
+            ItemStack i = new ItemStack(Material.GOLDEN_APPLE, 1, (short)1);
+
+            ShapelessRecipe sr = new ShapelessRecipe(new ItemStack(Material.STICK));
 
             sr.addIngredient(1, it.getData());
 
